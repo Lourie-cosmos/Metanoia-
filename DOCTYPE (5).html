@@ -565,18 +565,20 @@
     }
 
     @media print{
-      .topbar,.notes-drawer{display:none !important}
-      body{background:white;overflow:visible}
+      .topbar,.notes-drawer,.controls{display:none !important}
+      body{background:white;overflow:visible;margin:0}
       .viewport{padding:0}
       .slide{
         display:grid !important;
         width:100%;
+        height:100vh;
         border-radius:0;
         box-shadow:none;
         page-break-after:always;
         break-after:page;
-        min-height:100vh;
+        border:none;
       }
+      .slide::before{display:none}
     }
   </style>
 </head>
@@ -584,22 +586,23 @@
   <div class="deck-shell">
     <header class="topbar">
       <div class="brand">
-        <div class="seal" aria-hidden="true"></div>
+        <div class="seal" aria-label="Metanoia Method seal"></div>
         <div class="brand-text">
           <strong>Chapter 11 Slides</strong>
           <span>Metanoia Method • Presentation Deck with Speaker Notes</span>
         </div>
       </div>
       <div class="controls">
-        <button class="btn btn-soft" id="prevBtn" type="button">← Prev</button>
-        <button class="btn btn-soft" id="nextBtn" type="button">Next →</button>
-        <button class="btn btn-soft" id="notesBtn" type="button">Toggle Notes</button>
-        <button class="btn btn-primary" id="printBtn" type="button">Print Slides</button>
+        <button class="btn btn-soft" id="prevBtn" type="button" title="Previous slide (←)">← Prev</button>
+        <button class="btn btn-soft" id="nextBtn" type="button" title="Next slide (→)">Next →</button>
+        <button class="btn btn-soft" id="notesBtn" type="button" title="Toggle speaker notes (N)">Toggle Notes</button>
+        <button class="btn btn-primary" id="printBtn" type="button" title="Print slides (P)">Print Slides</button>
       </div>
     </header>
 
     <main class="viewport">
-      <section class="slide active wide-left" data-note="Welcome everyone. Today we explore Chapter 11 of the Metanoia Method, focusing on transformation of heart and mind. This presentation is designed for Christian women seeking spiritual renewal, emotional healing, and practical daily growth.">
+      <!-- Slide 1 -->
+      <section class="slide active wide-left" id="slide-1" role="doc-slide" data-note="Welcome everyone. Today we explore Chapter 11 of the Metanoia Method, focusing on transformation of heart and mind. This presentation is designed for Christian women ages 30–65 seeking spiritual renewal and mental clarity. Emphasize that this is both a spiritual and psychological journey.">
         <div class="slide-head reveal">
           <div>
             <div class="eyebrow">Chapter 11</div>
@@ -611,7 +614,7 @@
         <div class="slide-body">
           <div class="content-block">
             <div class="panel reveal d2">
-              <div class="quote">“Do not be conformed to this world, but be transformed by the renewing of your mind.”</div>
+              <div class="quote">"Do not be conformed to this world, but be transformed by the renewing of your mind."</div>
               <div class="quote-ref">Romans 12:2</div>
             </div>
             <div class="panel reveal d3">
@@ -634,10 +637,8 @@
         </div>
       </section>
 
-      <!-- Additional slides 2 through 12 follow the same structure with updated content and notes -->
-
       <!-- Slide 2 -->
-      <section class="slide" data-note="Introduce the Metanoia Method as an approach that blends biblical principles with psychological insight. Emphasize that Chapter 11 centers on repentance, renewal, and lived transformation—not merely information, but internal change.">
+      <section class="slide" id="slide-2" role="doc-slide" data-note="Introduce the Metanoia Method as an approach that blends biblical principles with psychological insight. Emphasize that Chapter 11 centers on repentance, renewal, and deep transformation. This is not surface-level change—it's about rewiring beliefs and responses.">
         <div class="slide-head reveal">
           <div>
             <div class="eyebrow">Introduction</div>
@@ -656,7 +657,7 @@
               </ul>
             </div>
             <div class="panel reveal d3">
-              <p>Metanoia is not just behavior modification. It is a deep shift in how we think, believe, respond, and live under God’s truth.</p>
+              <p>Metanoia is not just behavior modification. It is a deep shift in how we think, believe, respond, and live under God's truth.</p>
             </div>
           </div>
           <div class="visual soft reveal d4">
@@ -677,7 +678,415 @@
         </div>
       </section>
 
-      <!-- Additional slides 3 to 12 omitted for brevity but follow the same pattern -->
+      <!-- Slide 3 -->
+      <section class="slide" id="slide-3" role="doc-slide" data-note="Discuss the biblical foundation of metanoia. Explain the Greek meaning of metanoia as a complete 'change of mind' or turning around. Reference key passages where this transformation is described in Scripture and explain why understanding the original meaning matters.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Biblical Foundation</div>
+            <h2>Understanding Metanoia</h2>
+            <p class="subtitle">The Greek concept of complete spiritual transformation.</p>
+          </div>
+          <div class="badge">Concept</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <ul class="accent-list">
+                <li>Metanoia: Greek for "change of mind"</li>
+                <li>Beyond regret—true transformation and turning</li>
+                <li>Biblical precedent in Acts 3:19, Romans 12:2, 2 Corinthians 5:17</li>
+              </ul>
+            </div>
+            <div class="panel reveal d3">
+              <p>The renewal that leads to freedom from old patterns and embracing God's design for our lives.</p>
+            </div>
+          </div>
+          <div class="visual soft reveal d4">
+            <div class="visual-grid">
+              <div class="mini"><strong>Before</strong><span>Confusion</span></div>
+              <div class="mini"><strong>During</strong><span>Recognition</span></div>
+              <div class="mini"><strong>After</strong><span>Clarity</span></div>
+              <div class="mini"><strong>Result</strong><span>Freedom</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Establish the theological and linguistic foundation.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">3 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4 -->
+      <section class="slide" id="slide-4" role="doc-slide" data-note="Explore the three phases of metanoia transformation: recognition (awareness of the need for change), repentance (turning away from old patterns), and renewal (embracing new beliefs and behaviors). Use real-life examples relevant to women ages 30–65.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">The Three Phases</div>
+            <h2>Stages of Transformation</h2>
+            <p class="subtitle">How metanoia unfolds in our hearts and minds.</p>
+          </div>
+          <div class="badge">Process</div>
+        </div>
+        <div class="slide-body">
+          <div class="visual soft reveal d2" aria-hidden="true">
+            <div class="journey">
+              <div class="step">
+                <div class="step-no">1</div>
+                <div class="step-text">
+                  <strong>Recognition</strong>
+                  <span>Awareness of beliefs that need changing</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-no">2</div>
+                <div class="step-text">
+                  <strong>Repentance</strong>
+                  <span>Turning away from old patterns</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-no">3</div>
+                <div class="step-text">
+                  <strong>Renewal</strong>
+                  <span>Embracing new truth and identity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-block">
+            <div class="panel reveal d3">
+              <p>Each phase builds upon the previous one, creating a foundation for lasting transformation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Explain how the three phases interconnect and why all are essential.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">4 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5 -->
+      <section class="slide" id="slide-5" role="doc-slide" data-note="Discuss the emotional barriers that prevent women from experiencing metanoia. These include fear, shame, self-doubt, and resistance to change. Explain that acknowledging these barriers is the first step toward breakthrough.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Common Barriers</div>
+            <h2>What Blocks Transformation</h2>
+            <p class="subtitle">Identifying emotional and spiritual obstacles.</p>
+          </div>
+          <div class="badge">Challenges</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <ul class="accent-list">
+                <li>Fear of the unknown and loss of control</li>
+                <li>Shame from past decisions and failures</li>
+                <li>Deep-seated self-doubt and unworthiness</li>
+                <li>Resistance to letting go of familiar patterns</li>
+                <li>Doubt that real change is possible</li>
+              </ul>
+            </div>
+            <div class="panel reveal d3">
+              <p>These barriers are normal and navigable. Recognizing them is the first act of courage in transformation.</p>
+            </div>
+          </div>
+          <div class="visual soft reveal d4" aria-hidden="true">
+            <div class="ring one"></div>
+            <div class="ring two"></div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Normalize these barriers and emphasize that acknowledging them is powerful.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">5 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6 -->
+      <section class="slide" id="slide-6" role="doc-slide" data-note="Explore practical strategies for breaking free from limiting beliefs. These include: prayer and meditation, journaling and self-reflection, challenging negative thought patterns, seeking community support, and engaging with Scripture. Provide concrete tools participants can use immediately.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Practical Tools</div>
+            <h2>Breaking Free from Limiting Beliefs</h2>
+            <p class="subtitle">Actionable strategies for mental and spiritual renewal.</p>
+          </div>
+          <div class="badge">Strategies</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <ul class="accent-list">
+                <li>Daily prayer and meditation on Scripture</li>
+                <li>Intentional journaling and self-reflection</li>
+                <li>Challenging and reframing negative thoughts</li>
+                <li>Finding accountability partners and community</li>
+                <li>Creating affirmations grounded in God's truth</li>
+              </ul>
+            </div>
+            <div class="panel reveal d3">
+              <p>Start small. Choose one strategy and practice it consistently for 21 days to build a new neural pathway.</p>
+            </div>
+          </div>
+          <div class="visual soft reveal d4">
+            <div class="visual-grid">
+              <div class="mini"><strong>Spiritual</strong><span>Prayer</span></div>
+              <div class="mini"><strong>Mental</strong><span>Reframe</span></div>
+              <div class="mini"><strong>Emotional</strong><span>Support</span></div>
+              <div class="mini"><strong>Physical</strong><span>Habits</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Emphasize the 21-day brain research and encourage small, consistent steps.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">6 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7 -->
+      <section class="slide" id="slide-7" role="doc-slide" data-note="Share real-life testimonies of women who have experienced metanoia transformation. These stories should reflect the diverse experiences of women ages 30–65 and show how transformation manifests in daily life—relationships, career, identity, and purpose.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Real Stories</div>
+            <h2>Transformation in Action</h2>
+            <p class="subtitle">Women who embraced metanoia and found freedom.</p>
+          </div>
+          <div class="badge">Testimony</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <div class="quote">"I realized I had been living by my mother's voice, not God's. When I began renewing my mind with Scripture, everything shifted."</div>
+              <div class="quote-ref">— Rebecca, Age 42</div>
+            </div>
+            <div class="panel reveal d3">
+              <div class="quote">"Metanoia taught me that my past doesn't define my future. I am continually becoming who God created me to be."</div>
+              <div class="quote-ref">— Maria, Age 56</div>
+            </div>
+          </div>
+          <div class="visual soft reveal d4" aria-hidden="true">
+            <div class="ring one"></div>
+            <div class="ring two"></div>
+            <div class="cross-art"></div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Share personal stories that resonate with the audience's life stage and challenges.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">7 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8 -->
+      <section class="slide" id="slide-8" role="doc-slide" data-note="Explore specific areas where metanoia has the most impact: self-image and identity, relationship patterns, career and calling, spiritual life, and emotional health. Help participants identify which area is most pressing for them personally.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Areas of Impact</div>
+            <h2>Where Transformation Matters Most</h2>
+            <p class="subtitle">Key life domains shaped by metanoia.</p>
+          </div>
+          <div class="badge">Focus Areas</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <ul class="accent-list">
+                <li><strong>Identity:</strong> From shame to God-given worth</li>
+                <li><strong>Relationships:</strong> From codependency to healthy boundaries</li>
+                <li><strong>Calling:</strong> From duty to purpose-driven passion</li>
+                <li><strong>Spirituality:</strong> From rule-following to intimate faith</li>
+                <li><strong>Emotional Health:</strong> From reactivity to emotional freedom</li>
+              </ul>
+            </div>
+            <div class="panel reveal d3">
+              <p>Metanoia doesn't transform one area in isolation. True transformation is holistic and interconnected.</p>
+            </div>
+          </div>
+          <div class="visual soft reveal d4">
+            <div class="visual-grid">
+              <div class="mini"><strong>Identity</strong><span>Worth</span></div>
+              <div class="mini"><strong>Relationships</strong><span>Boundaries</span></div>
+              <div class="mini"><strong>Calling</strong><span>Purpose</span></div>
+              <div class="mini"><strong>Spirituality</strong><span>Intimacy</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Invite participants to reflect on which area resonates most with their current journey.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">8 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9 -->
+      <section class="slide" id="slide-9" role="doc-slide" data-note="Discuss the role of community and faith in sustaining metanoia transformation. Explain how accountability partners, faith communities, and spiritual direction support lasting change. Emphasize that transformation is not a solo journey.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">The Role of Community</div>
+            <h2>Transformation Is Not Solitary</h2>
+            <p class="subtitle">How faith community supports sustained change.</p>
+          </div>
+          <div class="badge">Connection</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <ul class="accent-list">
+                <li>Accountability partners who speak truth in love</li>
+                <li>A faith community that celebrates your progress</li>
+                <li>Spiritual direction or mentorship</li>
+                <li>Shared vulnerability and witness</li>
+                <li>Prayer partnership and intercession</li>
+              </ul>
+            </div>
+            <div class="panel reveal d3">
+              <p>"As iron sharpens iron, so one person sharpens another" (Proverbs 27:17). We are designed for community transformation.</p>
+            </div>
+          </div>
+          <div class="visual soft reveal d4">
+            <div class="ring one"></div>
+            <div class="ring two"></div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Emphasize the biblical mandate for Christian community and mutual support.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">9 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 10 -->
+      <section class="slide" id="slide-10" role="doc-slide" data-note="Address the question: What happens after the breakthrough moment? Discuss how to sustain transformation over time. Explain relapse patterns, how to navigate setbacks with grace, and the importance of ongoing renewal and maintenance practices.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Sustaining Change</div>
+            <h2>Maintaining Your Transformation</h2>
+            <p class="subtitle">How to protect and deepen your metanoia.</p>
+          </div>
+          <div class="badge">Sustainability</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <ul class="accent-list">
+                <li>Establish daily spiritual practices as non-negotiable</li>
+                <li>Monitor your thoughts and beliefs regularly</li>
+                <li>Stay connected to your faith community</li>
+                <li>Give yourself grace when old patterns emerge</li>
+                <li>Celebrate progress, no matter how small</li>
+              </ul>
+            </div>
+            <div class="panel reveal d3">
+              <p>Transformation is not a destination—it's a continuous journey of becoming who God created you to be.</p>
+            </div>
+          </div>
+          <div class="visual soft reveal d4">
+            <div class="visual-grid">
+              <div class="mini"><strong>Spiritual</strong><span>Daily</span></div>
+              <div class="mini"><strong>Mental</strong><span>Vigilance</span></div>
+              <div class="mini"><strong>Community</strong><span>Connected</span></div>
+              <div class="mini"><strong>Grace</strong><span>Always</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Reassure that setbacks are normal and offer practical maintenance strategies.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">10 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 11 -->
+      <section class="slide" id="slide-11" role="doc-slide" data-note="Provide concrete next steps and action items for participants. This should include: a personal metanoia assessment, choosing one transformation area to focus on, selecting a specific tool or practice to begin, finding an accountability partner, and scheduling a time to start.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Your Next Step</div>
+            <h2>Beginning Your Journey</h2>
+            <p class="subtitle">Practical actions to take after this presentation.</p>
+          </div>
+          <div class="badge">Action</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <ol>
+                <li>Complete your personal metanoia assessment</li>
+                <li>Identify your primary area of transformation</li>
+                <li>Choose one practice to start this week</li>
+                <li>Find an accountability partner or group</li>
+                <li>Set a specific date to begin your practice</li>
+              </ol>
+            </div>
+            <div class="panel reveal d3">
+              <p>The Metanoia Method workbook and resources are available to support your journey. Take time this week to journal on: "What beliefs about myself need renewing?"</p>
+            </div>
+          </div>
+          <div class="visual soft reveal d4">
+            <div class="ring one"></div>
+            <div class="ring two"></div>
+            <div class="cross-art"></div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">Provide specific, actionable steps and timeline to increase follow-through.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">11 / 12</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 12 -->
+      <section class="slide" id="slide-12" role="doc-slide" data-note="Close with inspiration and invitation. Reinforce the core message that metanoia is possible and that God's desire is for our complete transformation. Encourage participants to embrace the journey with faith and community. End with a powerful closing quote or prayer.">
+        <div class="slide-head reveal">
+          <div>
+            <div class="eyebrow">Closing Reflection</div>
+            <h1>Your Transformation Begins Now</h1>
+            <p class="subtitle">You are never too old, too broken, or too far gone to be renewed.</p>
+          </div>
+          <div class="badge">Invitation</div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="panel reveal d2">
+              <div class="quote">"I am confident of this, that he who began a good work in you will carry it on to completion until the day of Christ Jesus."</div>
+              <div class="quote-ref">Philippians 1:6</div>
+            </div>
+            <div class="panel reveal d3">
+              <p><strong>Questions?</strong> Thank you for joining this journey. For more resources, visit the Metanoia Method website or connect with Ms. Lourdes Jackson for continued guidance.</p>
+            </div>
+          </div>
+          <div class="visual reveal d4" aria-hidden="true">
+            <div class="ring one"></div>
+            <div class="ring two"></div>
+            <div class="cross-art"></div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="speaker-note">End with encouragement, gratitude, and clear next steps for continued connection and support.</div>
+          <div class="progress">
+            <div class="dots"></div>
+            <div class="slide-no">12 / 12</div>
+          </div>
+        </div>
+      </section>
 
     </main>
 
@@ -734,6 +1143,7 @@
       resetReveal(slides[current]);
       noteText.textContent = slides[current].dataset.note || '';
       updateDots();
+      window.location.hash = `slide-${current + 1}`;
     }
 
     function updateDots() {
@@ -787,6 +1197,14 @@
         else showSlide(current - 1);
       }
     }, { passive: true });
+
+    // Hash navigation support
+    if (window.location.hash) {
+      const slideNum = parseInt(window.location.hash.replace('#slide-', ''));
+      if (!isNaN(slideNum) && slideNum > 0 && slideNum <= slides.length) {
+        showSlide(slideNum - 1);
+      }
+    }
 
     buildDots();
     showSlide(0);
